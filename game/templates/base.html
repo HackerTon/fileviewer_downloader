@@ -1,0 +1,39 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Django Tailwind</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" contents="ie=edge" />
+  {% tailwind_css %}
+</head>
+
+<body>
+  <div class="
+        grid
+        grid-cols-1
+        items-start
+        gap-3
+        min-h-screen
+        bg-gradient-to-br
+        from-green-600
+        to-blue-600
+      ">
+      {% if filelist %}
+        {% for file in filelist %}
+          <div class="pl-5 py-5 mx-2 bg-white rounded-md">
+            <a href=/game/download/{{file}}>
+              {{ file }}
+            </a>
+
+          </div>
+        {% endfor %} 
+      {% else %}
+        <h1 class="text-base">NO FILES</p>
+      {% endif %}
+  </div>
+</body>
+
+</html>
